@@ -6,15 +6,9 @@ namespace DotNet9_Project.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    // Parameterized constructor for dependency injection
+    public class ProductsController(IProductService _service) : ControllerBase
     {
-        private readonly IProductService _service;
-
-        public ProductsController(IProductService service)
-        {
-            _service = service;
-        }
-
         [HttpGet]
         public ActionResult<IEnumerable<Product>> Get() => Ok(_service.GetAll());
 
