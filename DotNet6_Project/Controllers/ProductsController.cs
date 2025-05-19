@@ -9,7 +9,6 @@ namespace DotNet6_Project.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _service;
-
         public ProductsController(IProductService service)
         {
             _service = service;

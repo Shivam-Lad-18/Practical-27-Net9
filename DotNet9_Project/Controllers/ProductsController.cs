@@ -41,7 +41,7 @@ namespace DotNet9_Project.Controllers
             _service.Delete(id);
             return NoContent();
         }
-
+        // Collection parameter for filtering products by categories
         [HttpPost("filter")]
         public IActionResult FilterByCategories([FromBody] List<string> categories)
         {
